@@ -1,6 +1,5 @@
 import subprocess
 import re
-
 def start_snort(interface="eth0"):
     return subprocess.Popen(
         ["snort", "-i", interface, "-c", "/etc/snort/snort.conf", "-A", "console"],
@@ -21,9 +20,7 @@ snort_process = start_snort()
 monitor_snort(snort_process)
 '''Steps to Resolve the Issue
 Check if Snort is Installed: Make sure Snort is installed on your system. If it’s not installed, download and install it from the official Snort website.
-
 Ensure Snort is Added to System PATH: If Snort is installed but you still face this issue, it’s likely that Snort's installation directory is not added to the system's PATH. Here's how you can check and fix it:
-
 Go to System Properties → Advanced → Environment Variables.
 Under System variables, find Path and click Edit.
 Add the Snort installation directory to the Path. For example, if Snort is installed in C:\Snort, you should add C:\Snort\bin to the PATH.
